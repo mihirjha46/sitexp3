@@ -1,0 +1,27 @@
+clc;
+clear all;
+close all;
+syms a b y(x)
+dsolve(diff(y) == -a*y);
+syms x 
+T = taylor(sin(x)/x)
+limit(tan(x),x,pi/2)
+syms a1 b1 y1(x)
+dsolve(diff(y) == -a*y)
+syms a2 b2 c2 d2
+syms x1 x2
+x = [x1; x2];
+A = [a2 b2 ; c2 d2];
+b2 = A*x
+syms t
+x = t*sin(5*t); 
+y = t*cos(5*t);
+fplot(x, y)
+grid on
+syms x1
+fplot(tan(x1))
+syms t1
+xt = exp(abs(t)/10).*sin(5*abs(t));
+yt = exp(abs(t)/10).*cos(5*abs(t));
+zt = t1;
+h1 = fplot3(xt,yt,zt, [-10,10],'--r');
